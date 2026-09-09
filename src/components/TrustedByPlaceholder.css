@@ -1,0 +1,26 @@
+.trusted {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+  text-align: center;
+}
+
+.trusted__note {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.trusted__row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trusted__slot {
+  width: 128px;
+  height: 46px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,53 @@
+.cascade {
+  display: flex;
+  flex-direction: column;
+}
+
+.cascade__row {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 20px;
+}
+
+.cascade__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cascade__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.cascade__line {
+  width: 1px;
+  flex: 1;
+  min-height: 34px;
+  background: var(--line-strong);
+}
+
+.cascade__text {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.cascade__label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold-bright);
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.cascade__detail {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}

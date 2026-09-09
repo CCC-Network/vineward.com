@@ -1,0 +1,168 @@
+.hero {
+  padding: 88px 0 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero__copy h1 {
+  margin: 18px 0 26px;
+}
+
+.hero__lede {
+  font-size: 1.08rem;
+  margin-bottom: 34px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.hero__tree {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  animation: tree-draw 1.6s var(--ease) both;
+}
+
+@keyframes tree-draw {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__tree {
+    animation: none;
+  }
+}
+
+.trusted-section {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Ladder section */
+.ladder-section__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.ladder-section .section-head {
+  margin-bottom: 0;
+  position: sticky;
+  top: 110px;
+}
+
+/* Feature rows — hairline list, not card grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 56px;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 18px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.feature-row:nth-child(1),
+.feature-row:nth-child(2) {
+  border-top: none;
+}
+
+.feature-row__icon {
+  color: var(--gold-bright);
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-row h3 {
+  margin-bottom: 8px;
+}
+
+/* Multiply section */
+.multiply-section__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.multiply-section .section-head p {
+  margin-bottom: 22px;
+}
+
+/* Testimonials */
+.testimonial-section {
+  background: var(--bg-elevated);
+}
+
+/* CTA */
+.cta-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.cta-section__inner p {
+  margin-top: 12px;
+}
+
+@media (max-width: 960px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__visual {
+    order: -1;
+  }
+  .hero__tree {
+    max-width: 260px;
+  }
+  .ladder-section__grid,
+  .multiply-section__grid,
+  .cta-section__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .ladder-section .section-head {
+    position: static;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-row:nth-child(2) {
+    border-top: 1px solid var(--line);
+  }
+}

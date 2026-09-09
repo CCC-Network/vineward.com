@@ -1,0 +1,73 @@
+.dl-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.dl-alt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.dl-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  width: 100%;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+}
+
+.dl-btn:hover:not(.dl-btn--pending) {
+  border-color: var(--gold-dim);
+  background: var(--bg-panel);
+}
+
+.dl-btn--pending {
+  cursor: not-allowed;
+  border-style: dashed;
+  color: var(--text-faint);
+}
+
+.dl-btn__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dl-btn--pending .dl-btn__label {
+  color: var(--text-muted);
+}
+
+.dl-btn__detail {
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+
+@media (max-width: 640px) {
+  .dl-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dl-alt {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .dl-grid {
+    grid-template-columns: 1fr;
+  }
+}

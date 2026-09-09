@@ -1,0 +1,33 @@
+:root {
+  /* Base palette — deep vineyard night with antique gold, drawn from the
+     Vineward mark (gold growth form) and the Noble Character reference deck. */
+  --bg: #0b0f0c;
+  --bg-elevated: #111511;
+  --bg-panel: #151a13;
+  --bg-panel-2: #191f16;
+  --line: #262b21;
+  --line-strong: #37402f;
+
+  --text: #f2efe4;
+  --text-muted: #b6b3a3;
+  --text-faint: #7c7a6c;
+
+  --gold: #c6a15b;
+  --gold-bright: #e6c583;
+  --gold-dim: #8a6f3c;
+
+  --sage: #6b7a52;
+  --sage-bright: #8ea068;
+
+  --alert: #b3261e;
+
+  --font-display: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --container: 1180px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

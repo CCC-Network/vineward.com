@@ -1,0 +1,31 @@
+.download-hero {
+  padding-top: 76px;
+  border-top: none;
+}
+
+.download-hero h1 {
+  max-width: 680px;
+  margin: 18px 0 20px;
+}
+
+.download-hero__lede {
+  font-size: 1.02rem;
+  max-width: 62ch;
+}
+
+.download-section__inner {
+  max-width: 760px;
+}
+
+.download-note {
+  background: var(--bg-elevated);
+}
+
+.download-note__inner {
+  max-width: 620px;
+}
+
+.download-note h3 {
+  color: var(--gold-bright);
+  margin-bottom: 12px;
+}

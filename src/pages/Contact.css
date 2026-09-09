@@ -1,0 +1,46 @@
+.contact-hero {
+  padding-top: 76px;
+  border-top: none;
+}
+
+.contact-hero h1 {
+  max-width: 640px;
+  margin: 18px 0 20px;
+}
+
+.contact-hero__lede {
+  font-size: 1.05rem;
+  max-width: 56ch;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.contact-row:first-child {
+  border-top: none;
+}
+
+.contact-row__role {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+
+.contact-row h3 {
+  color: var(--text);
+}
