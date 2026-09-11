@@ -56,9 +56,38 @@
   }
 }
 
+.screens-section {
+  border-top: none;
+}
+
+.screens-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.screens-section__kicker {
+  text-align: center;
+}
+
 .trusted-section {
   padding-top: 0;
   border-top: none;
+}
+
+/* Mission */
+.mission-section__inner {
+  max-width: 780px;
+}
+
+.mission-section h2 {
+  margin: 16px 0 22px;
+}
+
+.mission-section__lede {
+  font-size: 1.04rem;
+  max-width: 66ch;
 }
 
 /* Ladder section */

@@ -4,16 +4,20 @@ import ModelFlow from "../components/ModelFlow";
 import LadderDiagram from "../components/LadderDiagram";
 import MultiplyDiagram from "../components/MultiplyDiagram";
 import DownloadButtons from "../components/DownloadButtons";
-import TestimonialPlaceholder from "../components/TestimonialPlaceholder";
-import TrustedByPlaceholder from "../components/TrustedByPlaceholder";
+import Testimonials from "../components/Testimonials";
+import UsedBy from "../components/UsedBy";
+import ImageCarousel from "../components/ImageCarousel";
 import Icon from "../components/Icon";
+import Reveal from "../components/Reveal";
+import { useParallax } from "../lib/useParallax";
+import { screenshots } from "../lib/config";
 import "./Home.css";
 
 const features: { icon: Parameters<typeof Icon>[0]["name"]; title: string; body: string }[] = [
   {
     icon: "pulse",
     title: "The Action Center",
-    body: "Home doesn't dump every feature on you. It surfaces who's overdue, who needs attention, and what's due today — pulled from real activity, not a separate list you have to maintain.",
+    body: "Home doesn't dump every feature on you. It surfaces who's overdue, who needs attention, and what's due today \u2014 pulled from real activity, not a separate list you have to maintain.",
   },
   {
     icon: "task",
@@ -38,11 +42,13 @@ const features: { icon: Parameters<typeof Icon>[0]["name"]; title: string; body:
   {
     icon: "shield",
     title: "Private by design",
-    body: "A leader sees their own disciples and their team. A pastor sees their organization. Nobody sees more than their role allows — enforced at the data level, not just hidden in the interface.",
+    body: "A leader sees their own disciples and their team. A pastor sees their organization. Nobody sees more than their role allows \u2014 enforced at the data level, not just hidden in the interface.",
   },
 ];
 
 export default function Home() {
+  const treeParallax = useParallax(0.06);
+
   return (
     <>
       <section className="hero">
@@ -70,21 +76,58 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero__visual" aria-hidden="true">
+          <div
+            className="hero__visual"
+            aria-hidden="true"
+            ref={treeParallax.ref}
+            style={{ transform: `translateY(${treeParallax.offset}px)` }}
+          >
             <TreeMotif className="hero__tree" />
           </div>
         </div>
       </section>
 
+      <section className="section section--tight screens-section">
+        <div className="container screens-section__inner">
+          <Reveal variant="fade">
+            <p className="section-kicker screens-section__kicker">A closer look</p>
+          </Reveal>
+          <Reveal variant="up" delay={80}>
+            <ImageCarousel slides={screenshots} />
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section section--tight trusted-section">
         <div className="container">
-          <TrustedByPlaceholder />
+          <Reveal variant="fade">
+            <UsedBy />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section mission-section">
+        <div className="container mission-section__inner">
+          <Reveal variant="up">
+            <p className="section-kicker">Our mission</p>
+            <h2>
+              Give every leader a clear, current picture of the people they're{" "}
+              <span className="serif-italic">responsible for</span>
+            </h2>
+            <p className="mission-section__lede">
+              Vineward exists so that growth never outpaces care. As a network gets bigger, it's
+              easy for a person to quietly fall through the cracks — forgotten between a
+              spreadsheet, a group chat, and someone's memory. Our mission is to close that gap:
+              build the operating layer that lets every leader disciple well, at any size, without
+              losing a single person along the way.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <div className="section-head">
+          <Reveal className="section-head">
             <p className="section-kicker">The operating model</p>
             <h2>Five moves, repeated with every person</h2>
             <p>
@@ -92,14 +135,16 @@ export default function Home() {
               acting on it, recording the truth of what was done, moving people through formation,
               and growing the leaders who can carry it themselves.
             </p>
-          </div>
-          <ModelFlow />
+          </Reveal>
+          <Reveal variant="up" delay={100}>
+            <ModelFlow />
+          </Reveal>
         </div>
       </section>
 
       <section className="section ladder-section">
         <div className="container ladder-section__grid">
-          <div className="section-head">
+          <Reveal variant="left" className="section-head">
             <p className="section-kicker">The ladder</p>
             <h2>
               Every person is somewhere on <span className="serif-italic">the ladder</span>
@@ -109,20 +154,22 @@ export default function Home() {
               leader can look at any name and know exactly what stage they're in and what's next,
               instead of relying on memory or a spreadsheet nobody updates.
             </p>
-          </div>
-          <LadderDiagram />
+          </Reveal>
+          <Reveal variant="right" delay={100}>
+            <LadderDiagram />
+          </Reveal>
         </div>
       </section>
 
       <section className="section features-section">
         <div className="container">
-          <div className="section-head">
+          <Reveal className="section-head">
             <p className="section-kicker">What it does</p>
             <h2>Built around tracking, not features for their own sake</h2>
-          </div>
-          <div className="features-grid">
-            {features.map((f) => (
-              <div className="feature-row" key={f.title}>
+          </Reveal>
+          <ul className="features-grid">
+            {features.map((f, i) => (
+              <Reveal as="li" key={f.title} className="feature-row" delay={(i % 2) * 80}>
                 <div className="feature-row__icon">
                   <Icon name={f.icon} />
                 </div>
@@ -130,15 +177,15 @@ export default function Home() {
                   <h3>{f.title}</h3>
                   <p>{f.body}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       <section className="section multiply-section">
         <div className="container multiply-section__grid">
-          <div className="section-head">
+          <Reveal variant="left" className="section-head">
             <p className="section-kicker">Leadership &amp; multiplication</p>
             <h2>Watch a network grow, not just a list of names</h2>
             <p>
@@ -149,28 +196,34 @@ export default function Home() {
             <Link to="/how-it-works" className="btn btn--ghost">
               Explore leadership tools
             </Link>
-          </div>
-          <MultiplyDiagram />
+          </Reveal>
+          <Reveal variant="right" delay={100}>
+            <MultiplyDiagram />
+          </Reveal>
         </div>
       </section>
 
       <section className="section testimonial-section">
         <div className="container">
-          <div className="section-head">
+          <Reveal className="section-head">
             <p className="section-kicker">From ministry leaders</p>
             <h2>Stories from the field</h2>
-          </div>
-          <TestimonialPlaceholder />
+          </Reveal>
+          <Reveal variant="up" delay={100}>
+            <Testimonials />
+          </Reveal>
         </div>
       </section>
 
       <section className="section cta-section">
         <div className="container cta-section__inner">
-          <div>
+          <Reveal variant="left">
             <h2>Ready to see it on your own team?</h2>
             <p>Get Vineward on your device, or reach the church directly if you'd rather talk first.</p>
-          </div>
-          <DownloadButtons />
+          </Reveal>
+          <Reveal variant="right" delay={100}>
+            <DownloadButtons />
+          </Reveal>
         </div>
       </section>
     </>

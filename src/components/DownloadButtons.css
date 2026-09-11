@@ -18,9 +18,9 @@
 
 .dl-btn {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 14px 16px;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
   transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -29,6 +29,10 @@
   font: inherit;
   text-align: left;
   color: inherit;
+}
+
+.dl-btn--wide {
+  grid-column: auto;
 }
 
 .dl-btn:hover:not(.dl-btn--pending) {
@@ -40,6 +44,23 @@
   cursor: not-allowed;
   border-style: dashed;
   color: var(--text-faint);
+}
+
+.dl-btn__icon {
+  color: var(--gold-bright);
+  flex-shrink: 0;
+  display: flex;
+}
+
+.dl-btn--pending .dl-btn__icon {
+  color: var(--text-faint);
+}
+
+.dl-btn__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
 }
 
 .dl-btn__label {
@@ -55,6 +76,45 @@
 .dl-btn__detail {
   font-size: 0.76rem;
   color: var(--text-faint);
+}
+
+/* Traditional-download icon: Vineward mark with small OS badges tucked
+   at the corners, so the button reads as "not tied to a single store". */
+.dl-icon-stack {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.dl-icon-stack__mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: block;
+}
+
+.dl-icon-stack__badge {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-bright);
+}
+
+.dl-icon-stack__badge--android {
+  bottom: -4px;
+  left: -6px;
+}
+
+.dl-icon-stack__badge--ios {
+  bottom: -4px;
+  right: -6px;
 }
 
 @media (max-width: 640px) {

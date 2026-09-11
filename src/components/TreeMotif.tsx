@@ -1,6 +1,9 @@
+import type { CSSProperties } from "react";
+
 type Props = {
   className?: string;
   ariaHidden?: boolean;
+  style?: CSSProperties;
 };
 
 /**
@@ -9,7 +12,7 @@ type Props = {
  * icon) so it reads as a recurring editorial motif rather than a repeated
  * logo stamp.
  */
-export default function TreeMotif({ className, ariaHidden = true }: Props) {
+export default function TreeMotif({ className, ariaHidden = true, style }: Props) {
   return (
     <svg
       className={className}
@@ -18,6 +21,7 @@ export default function TreeMotif({ className, ariaHidden = true }: Props) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden={ariaHidden}
       role={ariaHidden ? undefined : "img"}
+      style={style}
     >
       <g stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
         {/* trunk / root line */}

@@ -8,6 +8,9 @@ import Materials from "./pages/Materials";
 import Church from "./pages/Church";
 import Contact from "./pages/Contact";
 import Download from "./pages/Download";
+import Docs from "./pages/Docs";
+import ReleaseLogs from "./pages/ReleaseLogs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -26,6 +29,9 @@ export default function App() {
           <Route path="/church" element={<Church />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/docs" element={<Docs />} />
+          <Route path="/release-logs" element={<ReleaseLogs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -6,8 +6,8 @@
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
   padding-bottom: 48px;
 }
 
@@ -20,6 +20,7 @@
 
 .footer__brand p {
   font-size: 0.92rem;
+  margin-bottom: 22px;
 }
 
 .footer h4 {
@@ -32,13 +33,15 @@
   font-weight: 600;
 }
 
-.footer ul {
+/* Scoped to the nav-link lists only, so it can never collide with
+   .social-icons (also a <ul>, but laid out as a horizontal row). */
+.footer__nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.footer li {
+.footer__nav li {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
@@ -52,11 +55,23 @@
   padding-top: 24px;
   font-size: 0.82rem;
   color: var(--text-faint);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
 }
 
 @media (max-width: 780px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+  .footer__brand {
+    grid-column: 1 / -1;
   }
 }
 

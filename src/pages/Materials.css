@@ -35,6 +35,21 @@
   color: var(--gold-bright);
 }
 
+.materials-list__aka {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85em;
+  color: var(--text-faint);
+}
+
+.materials-visit {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+}
+
 .materials-access {
   background: var(--bg-elevated);
 }

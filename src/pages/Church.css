@@ -20,6 +20,18 @@
   flex-wrap: wrap;
 }
 
+.church-banner {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.church-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .church-details {
   background: var(--bg-elevated);
 }
